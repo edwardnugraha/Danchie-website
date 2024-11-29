@@ -1,201 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="/css/work.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/work.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Danchie Website</title>
-</head>
-<body>
-  <div class="work-header">
-    <header id="myHeader" class="">
-      <nav>
-        <img id="logo" class="logo" src="/assets/logo.png">
-        <a href="index.html">Home</a>
-        <a class="active" href="work.html">Our Work</a>
-        <a href="about-us.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a class="active" href="">EN</a>
-        <button id="openmenu">
-          <span class="button-span"></span>
-          <span class="button-span"></span>
-        </button>
-      </nav>
-    </header>
+  </head>
+  <body>
+    <div class="work-header">
+      <header id="myHeader" class="">
+        <nav>
+          <img id="logo" class="logo" src="/assets/logo.png" />
+          <a href="index.html">Home</a>
+          <a class="active" href="work.html">Our Work</a>
+          <a href="about-us.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a class="active" href="">EN</a>
+          <button id="openmenu">
+            <span class="button-span"></span>
+            <span class="button-span"></span>
+          </button>
+        </nav>
+      </header>
 
-    <div class="swiper-video">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="video" src="/assets/ceritanya-video.png" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img class="video" src="/assets/ceritanya-video.png" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img class="video" src="/assets/ceritanya-video.png" alt="">
+      <div class="swiper-video">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="video" src="/assets/ceritanya-video.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="video" src="/assets/ceritanya-video.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="video" src="/assets/ceritanya-video.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
-    </div>
-
 
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  var swiperLogoSettings = {
-    slidesPerView: 1,
-    centeredSlides: false,
-    spaceBetween: 0,
-    loop: true,
-    autoplay: true,
-    watchSlidesVisibility: true,
-    grabCursor: true,
-    speed: 800,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  };
+      document.addEventListener("DOMContentLoaded", function () {
+        var swiperLogoSettings = {
+          slidesPerView: 1,
+          centeredSlides: false,
+          spaceBetween: 0,
+          loop: true,
+          autoplay: true,
+          watchSlidesVisibility: true,
+          grabCursor: true,
+          speed: 800,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        };
 
-  var logoSwiper = new Swiper('.swiper-video', swiperLogoSettings);
-});
+        var logoSwiper = new Swiper(".swiper-video", swiperLogoSettings);
+      });
     </script>
-    <div id ="page"class="work-background">
-      <div class="containers">    
+    <div id="page" class="work-background">
+      <div class="containers">
         <section class="our-works">
-          <div class="block-work">   <img class="img-work-1" src="/assets/Rectangle 422.png"></div>
-       <div class="block-work-2">
-         <div class="title-section">
-           <h1 class="section-title">Works</h1>          
-           <h1 class="title-orange regular">/ Featured projects</h1>         
-         </div>  
-         <p class="text-banner">We employ a holistic design approach to narrate brand stories, resonate with core values, and craft lasting impressions that leave a memorable impact</p>
-         <img class="img-work-2" src="/assets/Rectangle 420.png">         
-       </div>                
+          <div class="block-work">
+            <img class="img-work-1" src="/assets/Rectangle 422.png" />
+          </div>
+          <div class="block-work-2">
+            <div class="title-section">
+              <h1 class="section-title">Works</h1>
+              <h1 class="title-orange regular">/ Featured projects</h1>
+            </div>
+            <p class="text-banner">
+              We employ a holistic design approach to narrate brand stories,
+              resonate with core values, and craft lasting impressions that
+              leave a memorable impact
+            </p>
+            <img class="img-work-2" src="/assets/Rectangle 420.png" />
+          </div>
         </section>
         <section class="our-works-mobile">
           <div class="block-work">
             <div class="title-section">
-               <h1 class="section-title">Works</h1>          
-               <h1 class="title-orange regular">/ Featured projects</h1>
-             </div>  
-            <p class="gray text-services">We employ a holistic design approach to narrate brand stories, resonate with core values, and craft lasting impressions that leave a memorable impact</p>
-             <p class="gray text-banner-mobile">We employ a holistic design approach to narrate brand stories, resonate with core values, and craft lasting impressions that leave a memorable impact</p>
-           </div>
-       <div class="block-work-2">
-          <img class="img-work-1" src="/assets/Rectangle 422.png">
-         <img class="img-work-2" src="/assets/Rectangle 420.png">         
-       </div>                
+              <h1 class="section-title">Works</h1>
+              <h1 class="title-orange regular">/ Featured projects</h1>
+            </div>
+            <p class="gray text-services">
+              We employ a holistic design approach to narrate brand stories,
+              resonate with core values, and craft lasting impressions that
+              leave a memorable impact
+            </p>
+            <p class="gray text-banner-mobile">
+              We employ a holistic design approach to narrate brand stories,
+              resonate with core values, and craft lasting impressions that
+              leave a memorable impact
+            </p>
+          </div>
+          <div class="block-work-2">
+            <img class="img-work-1" src="/assets/Rectangle 422.png" />
+            <img class="img-work-2" src="/assets/Rectangle 420.png" />
+          </div>
         </section>
-        <img class="img-work-3" src="/assets/Rectangle 416.png"> 
+        <img class="img-work-3" src="/assets/Rectangle 416.png" />
       </div>
     </div>
-  <div class="work-bottom">
-    <div class="containers">
-      <section class="our-works-2">
-        <div class="block-work"> 
-          <div class="title-work">
-            <h1 class="title-orange regular">/  How about chat</h1>
-          </div>             
-          <h1 class="title-banner medium">Interesting <span class="bold orange"> Right</span><br>
-          Let’s<span class="bold"> get in touch</span></h1>
-           <img style="margin-top: 26.3%; width: 108%;"src="/assets/Rectangle 417.png">
-           <img style="margin-top: 2%; width: 108%;"src="/assets/Rectangle 439.png">
-         </div>  
-      <div class="block-work-2">      
-         <img style="margin-top: 2%; width: 100%;"src="/assets/Rectangle 425.png">
-         <img style="margin-top: 2%; width: 100%;"src="/assets/Rectangle 428.png">
-         <img style="margin-top: 2%; width: 100%;"src="/assets/pict.png">
-      </div>                
-      </section>
-      <section class="our-works-mobile">
-        <div class="block-work">   
-          <div class="title-work-mobile">
-               <h1 class="title-orange regular">/  How about chat</h1>
-               <h1 class="title-banner medium">Interesting <span class="bold orange"> Right</span><br>
-            Let’s<span class="bold"> get in touch</span></h1>
+    <div class="work-bottom">
+      <div class="containers">
+        <section class="our-works-2">
+          <div class="block-work">
+            <div class="title-work">
+              <h1 class="title-orange regular">/ How about chat</h1>
+            </div>
+            <h1 class="title-banner medium">
+              Interesting <span class="bold orange"> Right</span><br />
+              Let’s<span class="bold"> get in touch</span>
+            </h1>
+            <img
+              style="margin-top: 26.3%; width: 108%"
+              src="/assets/Rectangle 417.png"
+            />
+            <img
+              style="margin-top: 2%; width: 108%"
+              src="/assets/Rectangle 439.png"
+            />
           </div>
-           <img style="margin-top: 26.3%; width: 100%;"src="/assets/Rectangle 417.png">
-           <img style="margin-top: 2%; margin-left: 0; width: 100%;"src="/assets/Rectangle 439.png">
-         </div>  
-      <div class="block-work-2">      
-         <img style="margin-top: 2%; margin-left: -5%; width: 100%;"src="/assets/Rectangle 425.png">
-         <img style="margin-top: 2%; margin-left: -5%; width: 100%;"src="/assets/Rectangle 428.png">
-         <img style="margin-top: 2%; margin-left: -5%; width: 100%;"src="/assets/pict.png">
-      </div>                
-      </section>
-    </div>
-  </div>
-  <section class="cta">
-    <div class="background-footer">
-      <div class="cta-section">
-        <div class="containers">
-          <div class="small-container">
-           
-          </div>        
-        </div>    
+          <div class="block-work-2">
+            <img
+              style="margin-top: 2%; width: 100%"
+              src="/assets/Rectangle 425.png"
+            />
+            <img
+              style="margin-top: 2%; width: 100%"
+              src="/assets/Rectangle 428.png"
+            />
+            <img style="margin-top: 2%; width: 100%" src="/assets/pict.png" />
+          </div>
+        </section>
+        <section class="our-works-mobile">
+          <div class="block-work">
+            <div class="title-work-mobile">
+              <h1 class="title-orange regular">/ How about chat</h1>
+              <h1 class="title-banner medium">
+                Interesting <span class="bold orange"> Right</span><br />
+                Let’s<span class="bold"> get in touch</span>
+              </h1>
+            </div>
+            <img
+              style="margin-top: 26.3%; width: 100%"
+              src="/assets/Rectangle 417.png"
+            />
+            <img
+              style="margin-top: 2%; margin-left: 0; width: 100%"
+              src="/assets/Rectangle 439.png"
+            />
+          </div>
+          <div class="block-work-2">
+            <img
+              style="margin-top: 2%; margin-left: -5%; width: 100%"
+              src="/assets/Rectangle 425.png"
+            />
+            <img
+              style="margin-top: 2%; margin-left: -5%; width: 100%"
+              src="/assets/Rectangle 428.png"
+            />
+            <img
+              style="margin-top: 2%; margin-left: -5%; width: 100%"
+              src="/assets/pict.png"
+            />
+          </div>
+        </section>
       </div>
-       <div class ="containers">
-      <footer>
-        <div class="f-l-box">
-           <p class="country-title">Danchie</p>
-        </div>  
-        <div class="f-r-box">
-          <div class="f-r-box-1">
-             <p class="country-title italic">CH.</p>
-            <p class="footer-text">(86)21-6053 4102<br>
-            contact.ch@danchie.com</p>
-          </div>
-          <div class="f-r-box-1">
-             <p class="country-title italic">PT.</p>
-            <p class="footer-text">(86)21-6053 4102<br>
-            contact.ch@danchie.com</p>
-          </div>
-          <div class="f-r-box-1">
-             <p class="country-title italic">ID.</p>
-            <p class="footer-text">(86)21-6053 4102<br>
-            contact.ch@danchie.com</p>
+    </div>
+    <section class="cta">
+      <div class="background-footer">
+        <div class="cta-section">
+          <div class="containers">
+            <div class="small-container"></div>
           </div>
         </div>
-      </footer>
-         <hr class="line-footer">
-         <div class="footer-bottom">
-           <div class="f-l-box">
+        <div class="containers">
+          <footer>
+            <div class="f-l-box">
+              <p class="country-title">Danchie</p>
+            </div>
+            <div class="f-r-box">
+              <div class="f-r-box-1">
+                <p class="country-title italic">CH.</p>
+                <p class="footer-text">
+                  (86)21-6053 4102<br />
+                  contact.ch@danchie.com
+                </p>
+              </div>
+              <div class="f-r-box-1">
+                <p class="country-title italic">PT.</p>
+                <p class="footer-text">
+                  (86)21-6053 4102<br />
+                  contact.ch@danchie.com
+                </p>
+              </div>
+              <div class="f-r-box-1">
+                <p class="country-title italic">ID.</p>
+                <p class="footer-text">
+                  (86)21-6053 4102<br />
+                  contact.ch@danchie.com
+                </p>
+              </div>
+            </div>
+          </footer>
+          <hr class="line-footer" />
+          <div class="footer-bottom">
+            <div class="f-l-box">
               <p class="footer-text-bottom">Privacy Policy | Term of Use</p>
-           </div>  
-           <div class="f-r-box">
-             <div class="f-r-box-1">
+            </div>
+            <div class="f-r-box">
+              <div class="f-r-box-1">
                 <p class="footer-text-bottom">Follow us :</p>
-             </div>
-             <div class="f-r-box-1">
+              </div>
+              <div class="f-r-box-1">
                 <p class="footer-text-bottom">We chat</p>
-             </div>
-             <div class="f-r-box-1">
+              </div>
+              <div class="f-r-box-1">
                 <p class="footer-text-bottom">Facebook</p>
-             </div>
-             <div class="f-r-box-1">
+              </div>
+              <div class="f-r-box-1">
                 <p class="footer-text-bottom">Linkedin</p>
-             </div>
-             <div class="f-r-box-1">
+              </div>
+              <div class="f-r-box-1">
                 <p class="footer-text-bottom">Instagram</p>
-             </div>
-           </div>
-         </div>
-       </div>
-    </div>
-  </section>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
-  <script src="script.js"></script>
-</body>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
