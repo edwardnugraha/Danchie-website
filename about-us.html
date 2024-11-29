@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Danchie Website</title>
+</head>
+<body>
+  <div class="background-header">
+    <header id="myHeader" class="">
+      <nav>
+        <img id="logo" class="logo" src="/assets/logo.png">
+        <a href="index.html">Home</a>
+        <a  href="work.html">Our Work</a>
+        <a class="active" href="about-us.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a class="active">EN</a>
+        <button id="openmenu">
+          <span class="button-span"></span>
+          <span class="button-span"></span>
+        </button>
+      </nav>
+    </header>
+    <div id="page" class="containers">
+      <div class="hero-banner">
+        <div class="box-herobanner">
+          <h1 class="title-banner medium">We <span class="bold"id='text'></span><br> solution <span class="bold orange">For You</span></h1>
+          <p class="text-banner">As artists, designers, gamers, and more, we unite to craft brand experiences that spark impactful change.</p>
+        </div>
+        <div class="box-herobanner-2">
+          <img src="/assets/about-banner.png" alt="hero-banner">
+        </div>
+      </div>
+      <script>
+
+        // function([string1, string2],target id,[color1,color2])    
+        consoleText(['Create', 'Build'], 'text',);
+
+        function consoleText(words, id, colors) {
+          if (colors === undefined) colors = ['#1A1C20'];
+          var visible = true;
+          var con = document.getElementById('console');
+          var letterCount = 1;
+          var x = 1;
+          var waiting = false;
+          var target = document.getElementById(id)
+          target.setAttribute('style', 'color:' + colors[0])
+          window.setInterval(function() {
+
+            if (letterCount === 0 && waiting === false) {
+              waiting = true;
+              target.innerHTML = words[0].substring(0, letterCount)
+              window.setTimeout(function() {
+                var usedColor = colors.shift();
+                colors.push(usedColor);
+                var usedWord = words.shift();
+                words.push(usedWord);
+                x = 1;
+                target.setAttribute('style', 'color:' + colors[0])
+                letterCount += x;
+                waiting = false;
+              }, 1000)
+            } else if (letterCount === words[0].length + 1 && waiting === false) {
+              waiting = true;
+              window.setTimeout(function() {
+                x = -1;
+                letterCount += x;
+                waiting = false;
+              }, 1000)
+            } else if (waiting === false) {
+              target.innerHTML = words[0].substring(0, letterCount)
+              letterCount += x;
+            }
+          }, 120)
+          window.setInterval(function() {
+            if (visible === true) {
+              con.className = 'console-underscore hidden'
+              visible = false;
+
+            } else {
+              con.className = 'console-underscore'
+
+              visible = true;
+            }
+          }, 400)
+        }
+      </script>
+    </div>
+  </div>
+    <div class="containers">
+      <section class="aboutus">
+        <div class="box-about">
+          <div class="title-section">
+            <h1 class="section-title">About</h1>          
+            <h1 class="title-orange regular">/ Who we are</h1>       
+          </div>
+           <p class="text-banner">In conclusion, our focus on human-centric design defines us as creators. We aim to craft solutions that seamlessly integrate into diverse lives with empathy and inclusivity, empowering individuals through impactful technological experiences.</p>
+        </div>        
+        <div class="box-about-2">
+          <div class="b-a-content">
+            <h1 class="title-about">Synced sillies</h1>
+            <p class="text-banner">Bunch of gillies (genius sillies) crafting people-friendly experience.</p>
+            <img src="assets/binoculars 3.png" alt="">   
+          </div>
+          <div class="b-a-content">
+            <h1 class="title-about">Time tango</h1>
+            <p class="text-banner">Bunch of gillies (genius sillies) crafting people-friendly experience.</p>
+            <img src="assets/puzzle 3.png" alt=""> 
+          </div>
+          <div class="b-a-content">
+            <h1 class="title-about">Nitty gritty</h1>
+            <p class="text-banner">Bunch of gillies (genius sillies) crafting people-friendly experience.</p>
+            <img src="assets/binoculars 2.png" alt=""> 
+          </div>
+          <div class="b-a-content">
+            <h1 class="title-about">Film flare</h1>
+            <p class="text-banner">Bunch of gillies (genius sillies) crafting people-friendly experience.</p>
+            <img src="assets/puzzle 2.png" alt=""> 
+          </div>
+        </div>        
+      </section>
+      <section class="ourteam">
+        <div class="title-section">
+          <h1 class="section-title">Team</h1>          
+          <h1 class="title-orange regular">/  The magicians</h1>       
+        </div>
+        <div class="box-team">
+           <p class="text-banner">Our team is a delightful blend of imaginative minds, each armed with a unique sense of humor and a passion for making the extraordinary happen. </p>
+        </div>
+        <div class="profile">
+          <div class="panel active" style="background-image: url('assets/Sofia.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+
+          <div class="panel" style="background-image: url('assets/Lisandro.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+          <div class="panel" style="background-image: url('assets/Aang.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+
+          <div class="panel" style="background-image: url('assets/Jo.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+
+          <div class="panel" style="background-image: url('assets/Ed.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="panel" style="background-image: url('assets/Wida.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+
+          <div class="panel" style="background-image: url('assets/Ly.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+          <div class="panel" style="background-image: url('assets/Yogi\ 1.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+          <div class="panel" style="background-image: url('assets/Yogi\ 1.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+          <div class="panel" style="background-image: url('assets/Yogi\ 1.png'); background-repeat: no-repeat;">
+            <h3></h3>
+          </div>
+        </div>
+      </section>
+      <section class="project">
+        <div class="title-section">
+          <h1 class="section-title">Project</h1>          
+          <h1 class="title-orange regular">/  Bring in the magic</h1>
+        </div>
+        <img src="/assets/Group 497.png">
+      </section>
+      <section class="approach">
+        <div class="title-section">
+          <h1 class="section-title">Our approach</h1>          
+          <h1 class="title-orange regular">/  Workflow</h1>
+        </div>
+        <div class="box-approach">
+          <div class="box-content">
+            <div class="box-approach-content">  
+              <img src="/assets/insight.png">
+              </div>
+            <h1 class="title-approach">Insight</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+          <div class="box-content">
+            <div class="box-approach-content">   
+              <img src="/assets/concept.png">
+              </div>
+            <h1 class="title-approach">Conceptualize</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+          <div class="box-content">
+            <div class="box-approach-content">   
+              <img src="/assets/validate.png">
+              </div>
+            <h1 class="title-approach">Validate</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+        </div>
+      </section>
+    </div>
+  <section class="ourteam-mobile">
+    <div class= "containers">
+    <div class="title-section">
+      <h1 class="section-title">Team</h1>          
+      <h1 class="title-orange regular">/  The magicians</h1>       
+    </div>
+    <div class="box-team">
+       <p class="text-banner">Our team is a delightful blend of imaginative minds, each armed with a unique sense of humor and a passion for making the extraordinary happen. </p>
+    </div>
+  </div>
+    <div class="swiper-profile">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Sofia.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Lisandro.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Aang.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Jo.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Ed.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Wida.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Ly.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Yogi 1.png">
+            <h3></h3>
+          </div>
+        <div class="swiper-slide swiper-slide-profile">
+          <img src="/assets/Yogi 1.png">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="project-mobile">
+    <div class= "containers">
+    <div class="title-section">
+      <h1 class="section-title">Project</h1>          
+      <h1 class="title-orange regular">/  Bring in the magic</h1>   
+    </div>
+  </div>
+     <img src="/assets/Group 497.png">
+    </div>
+  </section>
+  <section class="workflow-mobile">
+    <div class= "containers">
+    <div class="title-section">
+      <h1 class="section-title">Our approach</h1>          
+      <h1 class="title-orange regular">/  Workflow</h1>    
+    </div>      
+  </div>
+    <div class="swiper-workflow">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="box-content-mobile active">
+            <div class="box-approach-content-mobile">  
+              <img src="/assets/insight.png">
+              </div>
+            <h1 class="title-approach">Insight</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+        </div>
+
+        <div class="swiper-slide">
+          <div class="box-content-mobile">
+            <div class="box-approach-content-mobile">   
+              <img src="/assets/concept.png">
+              </div>
+            <h1 class="title-approach">Conceptualize</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+        </div>
+
+        <div class="swiper-slide">
+          <div class="box-content-mobile">
+            <div class="box-approach-content-mobile">   
+              <img src="/assets/validate.png">
+              </div>
+            <h1 class="title-approach">Validate</h1>
+            <p class="text-approach light">Sketching out concepts & translating them into visual representations through mockups.</p>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="location">
+    <div class="containers">
+      <div class="title-section">
+        <h1 class="section-title">Office</h1>
+        <h1 class="title-orange regular">/  Come visit us</h1>
+      </div>
+      <div class="office-location">
+        <div class="box-image-location active">
+           <img class="location-img" src="assets/office-Shanghai.png">
+          <div class="location-description active">
+            <p class ="gray">31°11'08.7"N 121°26'42.3"E</p>
+            <p class="orange">Shanghai - China</p>
+          </div>
+        </div>
+      <div class="box-image-location">
+         <img class="location-img" src="assets/office-Bali.png">
+        <div class="location-description">
+          <p class ="gray">8°42'47.3"S, 115°11'18.2"E</p>
+          <p class="orange">Bali - Indonesia</p>
+        </div>
+      </div>       
+      </div>
+            
+      </div>
+    <div class="swiper-location">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="box-image-location-mobile">
+            <img class="location-img" src="assets/office-Shanghai.png">
+            <div class="location-description active">
+              <p class="gray">31°11'08.7"N 121°26'42.3"E</p>
+              <p class="orange">Shanghai - China</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="box-image-location-mobile">
+            <img class="location-img" src="assets/office-Bali.png">
+            <div class="location-description">
+              <p class="gray">8°42'47.3"S, 115°11'18.2"E</p>
+              <p class="orange">Bali - Indonesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="background-footer">     
+        <div class="containers">
+          <div class="small-container">
+             <div class="cta-section-about">
+               <div class="cta-box">
+                    <p class="title-orange"> / How about chat?</p>
+                    <h1 class="title-banner">Have a <span class="bold">Big Idea?</span></h1>
+                  <div class="title-cta">
+                      <h1 class="title-banner bold orange">Let’s </h1>
+                      <h1 class=" title-banner text-1 bold orange">discuss</h1> 
+                      <h1 class="title-banner bold orange text-2"> party</h1>
+                  </div>
+                 <button class="button-cta" type="submit">Get in touch</button>
+                </div>
+               <div class="cta-box">
+                 <div class="cta-img">
+                   <img class="img-1" src="/assets/Component 83.png">
+                    <img class="img-2" src="/assets/beee2.png">
+                 </div>
+                 
+               </div          
+          </div>        
+        </div>    
+      </div>
+      <footer>
+        <div class="f-l-box">
+           <p class="country-title">Danchie</p>
+        </div>  
+        <div class="f-r-box">
+          <div class="f-r-box-1">
+             <p class="country-title italic">CH.</p>
+            <p class="footer-text">(86)21-6053 4102<br>
+            contact.ch@danchie.com</p>
+          </div>
+          <div class="f-r-box-1">
+             <p class="country-title italic">PT.</p>
+            <p class="footer-text">(86)21-6053 4102<br>
+            contact.ch@danchie.com</p>
+          </div>
+          <div class="f-r-box-1">
+             <p class="country-title italic">ID.</p>
+            <p class="footer-text">(86)21-6053 4102<br>
+            contact.ch@danchie.com</p>
+          </div>
+        </div>
+      </footer>
+         <hr class="line-footer">
+         <div class="footer-bottom">
+           <div class="f-l-box">
+              <p class="footer-text-bottom">Privacy Policy | Term of Use</p>
+           </div>  
+           <div class="f-r-box">
+             <div class="f-r-box-1">
+                <p class="footer-text-bottom">Follow us :</p>
+             </div>
+             <div class="f-r-box-1">
+                <p class="footer-text-bottom">We chat</p>
+             </div>
+             <div class="f-r-box-1">
+                <p class="footer-text-bottom">Facebook</p>
+             </div>
+             <div class="f-r-box-1">
+                <p class="footer-text-bottom">Linkedin</p>
+             </div>
+             <div class="f-r-box-1">
+                <p class="footer-text-bottom">Instagram</p>
+             </div>
+           </div>
+       </div>
+    </div>
+  </section>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

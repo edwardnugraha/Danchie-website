@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+  
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Danchie Website</title>
+</head>
+<body>
+  <div class="background-header">
+    <header id="myHeader" class="">
+      <nav>
+        <img id="logo"src="/assets/logo.png">
+        <a class="active" href="index.html">Home</a>
+        <a  href="work.html">Our Work</a>
+        <a href="about-us.html">About Us</a>
+        <a href="">Contact</a>
+        <a class="active" href="">EN</a>
+        <button id="openmenu">
+          <span class="button-span"></span>
+          <span class="button-span"></span>
+        </button>
+      </nav>
+    </header>
+    <div id="page"  class="container">
+      <div class="hero-banner">
+        <div class="box-herobanner">
+          <h1 class="title-banner medium">Where <span class="bold">Creativity</span> meets <span class="bold orange">Clicks!</span></h1>
+          <p class="text-banner">Where Every Pixel Holds the Power to Transform Ideas into Captivating Experiences, Igniting a Seamless Fusion of Imagination and Innovation.</p>
+        </div>
+        <div class="parallax-herobanner">
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
+      <script>
+        let container = document.querySelector('.parallax-herobanner');
+        let layer = document.querySelectorAll('.layer');
+
+        container.onmousemove = function(e){
+            let X = e.pageX;
+            let Y = e.pageY;
+
+          layer[0].style.transform ='translate('+ X/150 +'px, '+ Y/150 + 'px)';
+          layer[1].style.transform ='translate('+ X/150*2 +'px, '+ Y/150*2 + 'px)';
+          layer[2].style.transform ='translate('+ X/150*4 +'px, '+ Y/150*4 + 'px)';
+          layer[3].style.transform ='translate('+ X/150*6 +'px, '+ Y/150*6 + 'px)';
+          layer[4].style.transform ='translate('+ X/150*8 +'px, '+ Y/150*8 + 'px)';
+        }
+      </script> 
+      <section class="our-works">
+        <div class="title-section">
+          <h1 class="section-title">Works</h1>          
+          <h1 class="title-orange regular">/ Featured projects</h1>
+        </div>        
+      </section>
+      <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="box-swiper">
+                  <h1>Test</h1>
+                </div>
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+  <section class="services">   
+      <div class="hero-banner">    
+        <div class="box-herobanner">
+          <img class="our-services-img"src="/assets/Test.png"alt="hero-banner">
+        </div>
+        <div class="box-services">
+          <div class="title-section">
+            <h1 class="section-title">Service</h1>          
+            <h1 class="title-orange regular">/ Our services</h1>
+          </div>
+          <h1 class="title-banner medium">We offer <span class="orange bold">several service </span>for you</h1>
+          <p class="text-banner">Creative minded people with a lot of joyful in visual art that will help you turning the idea into useful and beautiful products. We're based in Canada and Germany. Visual art is our field of expertise, we help people to create good engagement through design and process. We believe in teamworks and tenacity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section class="cta">
+  <div class="background-header">
+    <div class="container">
+      <div class="small-container">
+        <div class="cta-section">
+          <div class="cta-box">
+            <h1 class="title-orange regular">/ How about chat</h1>
+            <h1 class="title-banner medium">
+              Have a <span class="bold">Big Idea?</span><br>
+              <span class="bold orange">Let’s <span class="text-hover">discuss</span>
+                <span class="bold orange text-hover-2">party</span></span>
+            </h1>
+          </div>
+          <div class="cta-box">
+            <img class="img-1" src="/assets/ubur ubur.png">
+            <img class="img-2" src="/assets/Ubur ubur kacamata.png">
+          </div>
+        </div>     
+      </div>
+    </div>
+    <div class="container">
+      <footer>
+        <div class="f-l-box">
+          <p class="country-title">Danchie</p>
+        </div>
+        <div class="f-r-box">
+          <div class="f-r-box-item">
+            <p class="country-title italic">CH.</p>
+            <p class="footer-text">(86)21-6053 4102 <br>contact.ch@danchie.com</p>
+          </div>
+          <div class="f-r-box-item">
+            <p class="country-title italic">PT.</p>
+            <p class="footer-text">122222 <br>contact.pt@danchie.com</p>
+          </div>
+          <div class="f-r-box-item">
+            <p class="country-title italic">ID.</p>
+            <p class="footer-text">(62)81-2345 6789 <br>contact.id@danchie.com</p>
+          </div>      
+        </div>
+      </footer>
+      <hr>
+    </div>
+  </div>
+</div>
+</section> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
