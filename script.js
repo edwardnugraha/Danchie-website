@@ -1,42 +1,117 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var header = document.getElementById('myHeader');
-  var page = document.getElementById('page');
-  var openMenuButton = document.getElementById('openmenu');
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.getElementById("myHeader");
+  var page = document.getElementById("page");
+  var openMenuButton = document.getElementById("openmenu");
+  var lastScrollTop = 0;
 
-  window.addEventListener('scroll', function() {
-    page.classList.remove('menuopen');
-    if (window.scrollY >= 100) {
-      header.classList.add('sticky');
+  window.addEventListener("scroll", function () {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (st > lastScrollTop) {
+      // Scrolling down
+      page.classList.remove("menuopen");
+      if (window.scrollY >= 100) {
+        header.classList.add("sticky");
+      }
     } else {
-      header.classList.remove('sticky');
+      // Scrolling up
+      if (window.scrollY < 100) {
+        header.classList.remove("sticky");
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  });
+
+  openMenuButton.addEventListener("click", function () {
+    page.classList.toggle("menuopen");
+    if (page.classList.contains("menuopen")) {
+      header.classList.remove("sticky");
+    } else if (window.scrollY >= 100) {
+      header.classList.add("sticky");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const language = document.querySelector(".language");
+  const selectedLang = language.querySelector(".selected-lang");
+  const dropdownToggle = language.querySelector(".arrow-img");
+  const dropdownMenu = language.querySelector(".dropdown-menu");
+
+  function updateDropdownVisibility() {
+    // Dapatkan bahasa yang aktif dari elemen .selected-lang
+    const currentLang = selectedLang.textContent.trim();
+
+    const menuItems = dropdownMenu.querySelectorAll("li");
+
+    menuItems.forEach((item) => {
+      const link = item.querySelector("a");
+      const itemLang = link.getAttribute("data-lang");
+
+      // Update logika visibility
+      if (currentLang === "EN") {
+        item.style.display = itemLang === "CN" ? "block" : "none";
+      } else if (currentLang === "CN") {
+        item.style.display = itemLang === "EN" ? "block" : "none";
+      }
+    });
+  }
+
+  // Toggle dropdown when clicking arrow or selected language
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    language.classList.toggle("active");
+    if (language.classList.contains("active")) {
+      updateDropdownVisibility();
+    }
+  };
+
+  dropdownToggle.addEventListener("click", toggleDropdown);
+  selectedLang.addEventListener("click", toggleDropdown);
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!language.contains(e.target)) {
+      language.classList.remove("active");
     }
   });
 
-  // Event listener to remove the sticky class when the button is clicked
-  openMenuButton.addEventListener('click', function() {
-    header.classList.remove('sticky');
-    page.classList.add('menuopen');
-  });
+  // Handle language selection
+  const dropdownLinks = dropdownMenu.querySelectorAll("a");
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-  var links = document.querySelectorAll('a[href^="#"]');
+      const newLang = this.getAttribute("data-lang");
 
-  links.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      // Prevent the default action
-      event.preventDefault();
+      // Update selected language text
+      selectedLang.textContent = newLang;
 
-      // Get the target element
-      var targetId = this.getAttribute('href');
-      var targetElement = document.querySelector(targetId);
+      // Remove active class from all links and add to selected
+      dropdownLinks.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
 
-      // Smooth scroll to target
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+      localStorage.setItem("selectedLanguage", newLang);
+      language.classList.remove("active");
+      updateDropdownVisibility();
     });
   });
+
+  // Set initial language and active state
+  const savedLanguage = localStorage.getItem("selectedLanguage") || "EN";
+  selectedLang.textContent = savedLanguage;
+
+  // Set initial active state in dropdown
+  const activeLink = dropdownMenu.querySelector(
+    `[data-lang="${savedLanguage}"]`
+  );
+  if (activeLink) {
+    dropdownLinks.forEach((l) => l.classList.remove("active"));
+    activeLink.classList.add("active");
+  }
+
+  updateDropdownVisibility();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -55,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const locationBoxes = document.querySelectorAll(".box-image-location");
@@ -86,9 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-var swiper1 = new Swiper('.swiper-container', {
-  effect: 'coverflow',
+var swiper1 = new Swiper(".swiper-container", {
+  effect: "coverflow",
   slidesPerView: 3,
   centeredSlides: true,
   loop: true,
@@ -100,55 +173,93 @@ var swiper1 = new Swiper('.swiper-container', {
     modifier: 1,
     slideShadows: false,
   },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 0,
+        modifier: 0,
+        slideShadows: false,
+      },
+    },
+  },
 });
-swiper1.on('slideChange', function () {
-  var activeSlideIndex = swiper1.activeIndex;
-  var boxRnzElements = document.querySelectorAll('.box-office-location');
 
-  boxRnzElements.forEach(function (element, index) {
-    if (index === activeSlideIndex) {
-      element.classList.add('active');
-    } else {
-      element.classList.remove('active');
-    }
+// Tangani perubahan slide
+swiper1.on("slideChange", function () {
+  // Dapatkan slide yang aktif saat ini
+  let activeSlide = swiper1.slides[swiper1.activeIndex];
+  let activeBoxLocation = activeSlide.querySelector(".box-office-location");
+
+  // Dapatkan id dari box-office-location yang aktif
+  let activeId = activeBoxLocation.id;
+  let officeNumber = activeId.split("-")[1];
+
+  // Reset semua active class
+  document.querySelectorAll(".box-office-location").forEach(function (el) {
+    el.classList.remove("active");
   });
+  document.querySelectorAll(".box-office").forEach(function (el) {
+    el.classList.remove("active");
+  });
+
+  // Set active class pada elemen yang sesuai
+  activeBoxLocation.classList.add("active");
+  document
+    .querySelector(`#description-${officeNumber}`)
+    .classList.add("active");
 });
 
-var swiper2 = new Swiper('.swiper-workflow', {
+// Tangani inisialisasi awal
+swiper1.on("init", function () {
+  let activeSlide = swiper1.slides[swiper1.activeIndex];
+  let activeBoxLocation = activeSlide.querySelector(".box-office-location");
+  activeBoxLocation.classList.add("active");
+
+  let activeId = activeBoxLocation.id;
+  let officeNumber = activeId.split("-")[1];
+  document
+    .querySelector(`#description-${officeNumber}`)
+    .classList.add("active");
+});
+
+var swiper2 = new Swiper(".swiper-workflow", {
   slidesPerView: 1.7,
   centeredSlides: true,
   loop: true,
   spaceBetween: 90,
 });
 
-swiper2.on('slideChange', function () {
+swiper2.on("slideChange", function () {
   var activeSlideIndex = swiper2.activeIndex;
-  var boxRnzElements = document.querySelectorAll('.box-content-mobile');
+  var boxRnzElements = document.querySelectorAll(".box-content-mobile");
 
   boxRnzElements.forEach(function (element, index) {
     if (index === activeSlideIndex) {
-      element.classList.add('active');
+      element.classList.add("active");
     } else {
-      element.classList.remove('active');
+      element.classList.remove("active");
     }
   });
 });
 
-var swiper3 = new Swiper('.swiper-location', {
+var swiper3 = new Swiper(".swiper-location", {
   slidesPerView: 1.1,
   centeredSlides: true,
   loop: false,
   spaceBetween: 5,
 });
-var swiper4 = new Swiper('.swiper-profile', {
+var swiper4 = new Swiper(".swiper-profile", {
   slidesPerView: 1.5,
   centeredSlides: true,
   loop: true,
   spaceBetween: 30,
 });
 
-var swiper5 = new Swiper('.swiper-container-mobile', {
-  effect: 'coverflow',
+var swiper5 = new Swiper(".swiper-container-mobile", {
+  effect: "coverflow",
   slidesPerView: 1.3,
   centeredSlides: true,
   loop: true,
@@ -161,40 +272,75 @@ var swiper5 = new Swiper('.swiper-container-mobile', {
     slideShadows: false,
   },
 });
-swiper5.on('slideChange', function () {
+swiper5.on("slideChange", function () {
   var activeSlideIndex = swiper5.activeIndex;
-  var boxRnzElements = document.querySelectorAll('.box-office-location-mobile');
+  var boxRnzElements = document.querySelectorAll(".box-office-location-mobile");
 
   boxRnzElements.forEach(function (element, index) {
     if (index === activeSlideIndex) {
-      element.classList.add('active');
+      element.classList.add("active");
     } else {
-      element.classList.remove('active');
+      element.classList.remove("active");
     }
   });
 });
 
-var swiper6 = new Swiper('.swiper-work', {
-    slidesPerView: 1.5,
-    spaceBetween: 10,
-    loop: true, // Perhatikan penulisan "loop" yang benar
-    centeredSlides: true
+var swiper6 = new Swiper(".swiper-work", {
+  slidesPerView: 3.5,
+  spaceBetween: 30,
+  loop: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-works",
+    clickable: true,
+    type: "bullets",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+      loop: true,
+      centeredSlides: true,
+    },
+  },
 });
 
-swiper6.on('slideChange', function () {
-    var activeSlideIndex = swiper6.activeIndex;
-    var boxSlideElements = document.querySelectorAll('.box-work');
+// Menambahkan event listener untuk slideChange
+swiper6.on("slideChange", function () {
+  updateActiveSlide();
+});
 
-    boxSlideElements.forEach(function (element, index) {
-        if (index === activeSlideIndex) {
-            element.classList.add('active');
-        } else {
-            element.classList.remove('active');
-        }
+// Menambahkan event listener untuk klik pada box-work
+document.querySelectorAll(".box-work").forEach(function (box) {
+  box.addEventListener("click", function (e) {
+    e.preventDefault(); // Mencegah default behavior
+
+    // Hapus kelas active dari semua box
+    document.querySelectorAll(".box-work").forEach(function (el) {
+      el.classList.remove("active");
     });
+
+    // Tambah kelas active ke box yang diklik
+    this.classList.add("active");
+  });
 });
 
+// Fungsi untuk mengupdate status active
+function updateActiveSlide() {
+  var realIndex = swiper6.realIndex;
+  var boxSlideElements = document.querySelectorAll(".box-work");
 
+  boxSlideElements.forEach(function (element, index) {
+    if (index === realIndex) {
+      element.classList.add("active");
+    } else {
+      element.classList.remove("active");
+    }
+  });
+}
+
+// Panggil updateActiveSlide saat inisialisasi
+updateActiveSlide();
 
 $(".custom-carousel").owlCarousel({
   autoWidth: true,
@@ -209,51 +355,49 @@ $(document).ready(function () {
   });
 });
 
-
 // Dapatkan elemen img-1, img-2, text-1, dan text-2
-const ctabox = document.querySelector('.title-cta');
-const ctaimg = document.querySelector('.cta-img');
-const img1 = document.querySelector('.img-1');
-const img2 = document.querySelector('.img-2');
-const text1 = document.querySelector('.text-1');
-const text2 = document.querySelector('.text-2');
+const ctabox = document.querySelector(".title-cta");
+const ctaimg = document.querySelector(".cta-img");
+const img1 = document.querySelector(".img-1");
+const img2 = document.querySelector(".img-2");
+const text1 = document.querySelector(".text-1");
+const text2 = document.querySelector(".text-2");
 
 // Tambahkan event listener untuk peristiwa mouseenter pada ctabox
-ctabox.addEventListener('mouseenter', function() {
+ctabox.addEventListener("mouseenter", function () {
   // Sembunyikan text-1 dengan mengatur opacity menjadi 0
-  img1.style.opacity = '0';
-  text1.style.opacity= '0';
+  img1.style.opacity = "0";
+  text1.style.opacity = "0";
   // Tampilkan img-2 dan text-2 dengan mengatur opacity menjadi 1
-  img2.style.opacity= '1';
-  text2.style.opacity = '1';
+  img2.style.opacity = "1";
+  text2.style.opacity = "1";
 });
 
 // Tambahkan event listener untuk peristiwa mouseleave pada ctabox
-ctaimg.addEventListener('mouseleave', function() {
+ctaimg.addEventListener("mouseleave", function () {
   // Tampilkan kembali text-1 dengan mengatur opacity menjadi 1
-  img1.style.opacity = '1';
-  text1.style.opacity = '1';
+  img1.style.opacity = "1";
+  text1.style.opacity = "1";
   // Sembunyikan img-2 dan text-2 dengan mengatur opacity menjadi 0
-  img2.style.opacity = '0';
-  text2.style.opacity = '0';
+  img2.style.opacity = "0";
+  text2.style.opacity = "0";
 });
 // Tambahkan event listener untuk peristiwa mouseenter pada ctabox
-ctaimg.addEventListener('mouseenter', function() {
+ctaimg.addEventListener("mouseenter", function () {
   // Sembunyikan text-1 dengan mengatur opacity menjadi 0
-  img1.style.opacity = '0';
-  text1.style.opacity = '0';
+  img1.style.opacity = "0";
+  text1.style.opacity = "0";
   // Tampilkan img-2 dan text-2 dengan mengatur opacity menjadi 1
-  img2.style.opacity = '1';
-  text2.style.opacity = '1';
+  img2.style.opacity = "1";
+  text2.style.opacity = "1";
 });
 
 // Tambahkan event listener untuk peristiwa mouseleave pada ctabox
-ctabox.addEventListener('mouseleave', function() {
+ctabox.addEventListener("mouseleave", function () {
   // Tampilkan kembali text-1 dengan mengatur opacity menjadi 1
-  img1.style.opacity = '1';
-  text1.style.opacity = '1';
+  img1.style.opacity = "1";
+  text1.style.opacity = "1";
   // Sembunyikan img-2 dan text-2 dengan mengatur opacity menjadi 0
-  img2.style.opacity = '0';
-  text2.style.opacity = '0';
+  img2.style.opacity = "0";
+  text2.style.opacity = "0";
 });
-

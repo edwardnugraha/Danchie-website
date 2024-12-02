@@ -7,11 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -24,12 +20,35 @@
   <div class="background-header-adengroup">
     <header id="myHeader" class="">
       <nav>
-        <img id="logo" class="logo"src="assets/logo.png">
-        <a  href="index.html">Home</a>
-        <a  class="active" href="work.html">Our Work</a>
-        <a  href="about-us.html">About Us</a>
-        <a  href="contact.html">Contact</a>
-        <a class="active" href="">EN</a>
+        <div id="logo" class="logo">
+          <img src="assets/logo.png">
+        </div>
+        <ul>
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="work.html">Our Work</a>
+          </li>
+          <li>
+            <a href="about-us.html">About Us</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <div class="language">
+          <li>
+            <a class="selected-lang" href="javascript:void(0)">EN</a>
+          </li>
+          <div class="arrow-img">
+            <img src="assets/arrow.svg" alt="">
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)" data-lang="EN" class="active">EN</a></li>
+            <li><a href="javascript:void(0)" data-lang="CN">CN</a></li>
+          </ul>
+        </div>
         <button id="openmenu">
           <span class="button-span"></span>
           <span class="button-span"></span>

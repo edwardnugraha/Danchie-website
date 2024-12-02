@@ -1,134 +1,141 @@
-.work-header{
+.work-header {
   padding: 1% 0;
-  background-image: url('/assets/Mask\ group.png');
+  background-image: url("/assets/Mask\ group.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vw;
   position: relative;
 }
-.work-background{
+.work-background {
   padding: 15% 0 0;
   margin-bottom: 50%;
-  background-color: #F6F1E9;
+  background-color: #f6f1e9;
   height: 55vw;
 }
-.img-work-1{
+.img-work-1 {
   width: 107%;
   display: block;
 }
-.img-work-2{
+.img-work-2 {
   margin-top: 18.3%;
   width: 100%;
   display: block;
 }
-.img-work-3{
+.img-work-3 {
   margin-top: 2%;
   width: 100%;
 }
 
-.block-work{
+.block-work {
   width: 50%;
 }
-.block-work-2{
+.block-work-2 {
   margin-left: 5%;
   width: 47%;
 }
 
-.title-work{
+.title-work {
   margin-top: 20%;
 }
 .box-work img {
   width: 100%;
   filter: grayscale(100%);
-  transform: scale(0.9);
   transition: transform 0.3s ease-in-out; /* Mengatur transisi untuk properti transform */
+  border-radius: 20px;
 }
 
 .box-work.active img {
   width: 100%;
   filter: grayscale(0%);
-  transform: scale(1);
 }
 
-.box-work.active p{
-  display: block;
+.box-work.active .title-case,
+.box-work.active .description-case {
+  color: #1a1c20;
 }
-.box-work p{
-  display: none;
+.title-case {
+  margin: 4% 0 3%;
   transition: transform 0.3s ease-in-out; /* Mengatur transisi untuk properti transform */
+  font-size: clamp(17px, 1.7vw, 34px);
+  color: #898989;
 }
-.swiper-video{
+
+.description-case {
+  transition: transform 0.3s ease-in-out; /* Mengatur transisi untuk properti transform */
+  font-size: clamp(11px, 1.1vw, 22px);
+  color: #898989;
+}
+.swiper-video {
   position: absolute;
   top: 0;
   width: 100%;
   height: 50vw;
   overflow: hidden;
 }
-.video{
+.video {
   width: 100%;
   height: 101%;
 }
 
-
 /* case studies tortola */
-.case-site{
+.case-site {
   margin: 15% 0 13%;
 }
 
-
-.icon-header{
+.icon-header {
   position: relative;
   z-index: 100;
   display: grid;
-  grid-template-columns: repeat(3,33.4%);
+  grid-template-columns: repeat(3, 33.4%);
   width: 50%;
 }
-.box-desc-site, .box-desc-site-2 {
+.box-desc-site,
+.box-desc-site-2 {
   width: 50%;
   align-self: center;
 }
 
- .box-icon-header img{
+.box-icon-header img {
   width: 100%;
 }
-.desc-site{
+.desc-site {
   display: flex;
   width: 90%;
   margin: 0 auto;
 }
-.box-desc-site p{
+.box-desc-site p {
   margin-left: 2%;
   width: 93%;
   margin-top: 3%;
   line-height: 1.6;
 }
-.logo-company{
+.logo-company {
   width: 45%;
   margin-left: 27%;
   margin-top: -5%;
 }
-.img-case{
+.img-case {
   margin: 0 auto;
   width: 89.6875%;
 }
-.img-case-ice{
+.img-case-ice {
   margin: 0 auto;
   margin-top: 8%;
   margin-bottom: 28%;
   width: 89.6875%;
 }
-.img-case-bottom{
+.img-case-bottom {
   margin: 0 auto;
   margin-top: 8%;
   margin-bottom: 5.5%;
   width: 89.6875%;
 }
-.big-img{
+.big-img {
   margin-bottom: 1%;
   width: 100%;
 }
 
-.flex-img-case{
+.flex-img-case {
   display: flex;
   gap: 2%;
 }
@@ -154,26 +161,27 @@
   overflow-y: scroll;
   position: absolute;
 }
-.tablet-img{
+.tablet-img {
   margin: 0 auto;
   width: 78%;
   margin-top: 7%;
 }
-.hp-iphone{
+.hp-iphone {
   margin: 8% 0;
 }
-.tablet-img img, .website, .hp-iphone img{
+.tablet-img img,
+.website,
+.hp-iphone img {
   width: 100%;
   height: 100%;
 }
 
-.icon-adengroup{
+.icon-adengroup {
   width: 62.5%;
   margin: 0 auto;
   margin-top: 9%;
   margin-bottom: 10%;
 }
-
 
 .tablet-img-adengroup {
   margin: 0 auto;
@@ -181,51 +189,52 @@
   margin-top: -2.5%;
   margin-bottom: 15%;
 }
-.tablet-img-akila img, .tablet-img-adengroup img{
+.tablet-img-akila img,
+.tablet-img-adengroup img {
   width: 100%;
 }
 
 .tablet-img-akila {
   margin: 0 auto;
-    margin-top: 0px;
+  margin-top: 0px;
   width: 60%;
   margin-top: 14%;
 }
 
-.box-aden-case{
+.box-aden-case {
   align-self: center;
   width: 100%;
 }
-.box-aden-case p{
+.box-aden-case p {
   margin-left: 10%;
 }
-.box-aden-case img{
+.box-aden-case img {
   width: 100%;
   margin-left: 0.8%;
 }
 
-.aden-desc-case{
+.aden-desc-case {
   margin: 0 auto;
   display: flex;
   margin-top: 7%;
   margin-bottom: -1%;
 }
 
-
 /* silkbridge */
 
-.img-silkbridge-left{
+.img-silkbridge-left {
   float: left;
   margin: 0 0 8.1%;
   width: 64.583%;
 }
-.img-silkbridge-right{
+.img-silkbridge-right {
   float: right;
-  width: 72.708%;;
+  width: 72.708%;
   margin: 0 0 8.1%;
 }
 
-.img-silkbridge-left img, .img-silkbridge-right img{
+.img-silkbridge-left img,
+.img-silkbridge-right img {
   width: 100%;
 }
 
@@ -242,7 +251,7 @@
   line-height: 1.6;
 }
 
-.tablet-section{
+.tablet-section {
   display: flex;
   gap: 3%;
   margin: 7.3% 0;
@@ -252,82 +261,79 @@
 .box-tablet {
   width: 61%;
 }
-.box-tablet-2{
+.box-tablet-2 {
   width: 30%;
   align-self: center;
   margin-top: -6.5%;
 }
 
-.box-tablet img{
+.box-tablet img {
   width: 100%;
 }
 
-.box-tablet-2 p{
+.box-tablet-2 p {
   width: 100%;
 }
 
 .img-silk {
   width: 86%;
   margin: 0 auto;
-    margin-bottom: 0px;
-    margin-left: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
   margin-left: auto;
   margin-left: 7.5%;
   margin-bottom: 11.5%;
 }
 
-
-
 /* akila */
 
-.section-5-akila{
+.section-5-akila {
   display: flex;
   width: 100%;
   gap: 1%;
 }
 
-.box-akila-section img{
+.box-akila-section img {
   margin-top: 1%;
   width: 100%;
 }
 
-.box-akila-section{
+.box-akila-section {
   align-self: center;
 }
 
-.title-akila{
+.title-akila {
   width: 60%;
   margin-left: 13%;
 }
 
-.description-akila{
+.description-akila {
   margin-left: 13%;
   width: 80%;
 }
 
-.section-6-akila{
+.section-6-akila {
   display: flex;
   gap: 1%;
   width: 89.6875%;
   margin: 0 auto;
 }
 
-.box-section-1{
+.box-section-1 {
   width: 25%;
 }
-.box-section-2{
+.box-section-2 {
   width: 50%;
 }
 
-
 /* nxpark */
 
-.nxpark-icon{
+.nxpark-icon {
   margin: 0 auto;
   width: 40%;
 }
 
-.nxpark-description{
+.nxpark-description {
   margin: 0 auto;
   margin-top: 8%;
   margin-bottom: 8%;
@@ -335,113 +341,112 @@
   text-align: center;
 }
 
-
 /* anta */
 
-.box-anta-banner{
+.box-anta-banner {
   margin: 0 auto;
   margin-top: -15%;
   width: 84.947%;
 }
 
-.hero-anta-img{
+.hero-anta-img {
   width: 100%;
 }
 
-.anta-flex{
+.anta-flex {
   margin: 0 auto;
   margin-bottom: 8%;
   width: 89.583%;
   display: flex;
   gap: 5%;
 }
-.anta-flex-img{
+.anta-flex-img {
   margin: 0 auto;
   margin-bottom: 8%;
   display: flex;
   gap: 2.5%;
 }
-.anta-grid-img{
+.anta-grid-img {
   margin: 0 auto;
-margin-bottom: 8%;
-display: grid;
-grid-template-columns: repeat(2, 50%);
-gap: 2.5%;
-width: 89.583%;
-margin-top: 8%;
+  margin-bottom: 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 2.5%;
+  width: 89.583%;
+  margin-top: 8%;
 }
-.box-anta{
+.box-anta {
   width: 50%;
   align-self: self-end;
 }
-.box-anta img{
+.box-anta img {
   width: 100%;
 }
-.box-anta p{
+.box-anta p {
   width: 82%;
 }
 
-.anta-img{
+.anta-img {
   margin-bottom: 1%;
   width: 100%;
   height: 100%;
   align-self: self-end;
 }
 
-.anta-box-img{
+.anta-box-img {
   width: 92%;
   margin-bottom: 6%;
 }
 
 /* ice talk */
-.ice-section{
+.ice-section {
   position: relative;
   margin: 14% 0 22%;
 }
 
-.ice-cup{
+.ice-cup {
   top: -15%;
   position: absolute;
   left: 0;
   width: 96%;
 }
 
-.ice-flex{
+.ice-flex {
   width: 89.6875%;
   margin: 0 auto;
   margin-bottom: 8%;
   display: flex;
   gap: 2%;
 }
-.box-ice{
+.box-ice {
   position: relative;
   width: 50%;
 }
 
-.box-ice-img{
+.box-ice-img {
   width: 77%;
 }
 
-.box-ice-img-2{
+.box-ice-img-2 {
   top: 10%;
   position: absolute;
   width: 129%;
   left: -5%;
 }
 
-.box-title-ice{
+.box-title-ice {
   width: 85%;
   padding-left: 28%;
   padding-top: 17%;
 }
 
-.box-desc-ice{
+.box-desc-ice {
   margin-top: 2%;
   width: 86%;
   padding-left: 28%;
 }
 
-.section-3{
+.section-3 {
   margin: 0 auto;
   width: 85.416%;
 }
@@ -452,9 +457,40 @@ margin-top: 8%;
   margin-top: -5%;
 }
 
-
 .logo-company-marriot {
   width: 69%;
   margin-left: 15%;
   margin-top: -5%;
+}
+.swiper-works {
+  position: relative;
+  left: 8% !important;
+  bottom: unset !important;
+}
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  border-radius: 210px !important;
+  background: #f3f0f2 !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  width: 50px !important;
+  height: 10px !important;
+  background: #e73700 !important;
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  .box-work img {
+    width: 100%;
+    filter: grayscale(100%);
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out; /* Mengatur transisi untuk properti transform */
+    border-radius: 5px;
+  }
+  .box-work.active img {
+    width: 100%;
+    filter: grayscale(0%);
+    transform: scale(1);
+  }
 }

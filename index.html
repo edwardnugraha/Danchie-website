@@ -7,11 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -24,18 +20,42 @@
   <div class="background-header">
     <header id="myHeader" class="">
       <nav>
-        <img id="logo" class="logo"src="assets/logo.png">
-        <a class="active" href="index.html">Home</a>
-        <a  href="work.html">Our Work</a>
-        <a href="about-us.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a class="active" href="">EN</a>
+        <div id="logo" class="logo">
+          <img src="assets/logo.png">
+        </div>
+        <ul>
+          <li>
+            <a class="active" href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="work.html">Our Work</a>
+          </li>
+          <li>
+            <a href="about-us.html">About Us</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <div class="language">
+          <li>
+            <a class="selected-lang" href="javascript:void(0)">EN</a>
+          </li>
+          <div class="arrow-img">
+            <img src="assets/arrow.svg" alt="">
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)" data-lang="EN" class="active">EN</a></li>
+            <li><a href="javascript:void(0)" data-lang="CN">CN</a></li>
+          </ul>
+        </div>
         <button id="openmenu">
           <span class="button-span"></span>
           <span class="button-span"></span>
         </button>
       </nav>
     </header>
+
     <div id="page"  class="containers">
       <div class="hero-banner">
         <div class="box-herobanner">
@@ -44,9 +64,6 @@
         </div>
         <div class="box-herobanner">
           <img src="assets/image 471.png">
-        </div>
-        <div class="box-herobanner-mobile">
-          <img src="assets/herobanner-mobile.png">
         </div>
         <!-- <div class="parallax-herobanner">
           <div class="layer"></div>
@@ -75,90 +92,54 @@
         <div class="title-section">
           <h1 class="section-title">Works</h1>          
           <h1 class="title-orange regular">/ Featured projects</h1>
-        </div>        
+        </div>      
+        <a href="http://">
+          <div class="button-work">
+           View all work
+          </div>
+        </a>  
       </section>
     </div>
   </div>
-  <section class="game-section">
-    <div class="owl-carousel custom-carousel owl-theme">
-      <div class="item active" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg);">
-        <div class="item-desc">
-          <h3>Dota 2</h3>
-          <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
-        <div class="item-desc">
-          <h3>The Witcher 3</h3>
-          <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense
-            of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
-        <div class="item-desc">
-          <h3>RDR 2</h3>
-          <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
-        <div class="item-desc">
-          <h3>PUBG Mobile</h3>
-          <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
-        <div class="item-desc">
-          <h3>Fortnite</h3>
-          <p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod
-            for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
-        <div class="item-desc">
-          <h3>Far Cry 5</h3>
-          <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft.
-            which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </section>
-  <section class="our-works-mobile">
+  <section class="our-works">
       <div class="swiper-work">
         <div class="swiper-wrapper">
-          <div class="swiper-slide box-work active">
+          <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg">
-            <p>Decarbonize the built environment</p>   
+            <p class="title-case">Decarbonize the built environment</p> 
+            <p class="description-case">Aden Group, China<br>
+              Year, 2023</p>  
           </div>
           <div class="swiper-slide box-work">
            <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg">
-            <p>Decarbonize the built environment</p> 
+            <p class="title-case" >Human safety</p> 
+            <p class="description-case">GENERALI, unknown <br>
+              Year, 2018</p>
           </div>
           <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg">
-            <p>Decarbonize the built environment</p>      
+            <p class="title-case" >Human safety</p> 
+            <p class="description-case">GENERALI, unknown <br>
+              Year, 2019</p>    
           </div>
           <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg">
-            <p>Decarbonize the built environment</p> 
+            <p class="title-case">Decarbonize the built environment</p> 
           </div>
           <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg">
-            <p>Decarbonize the built environment</p> 
+            <p class="title-case">Decarbonize the built environment</p> 
           </div>
           <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg">
-            <p>Decarbonize the built environment</p>          
+            <p class="title-case" >Decarbonize the built environment</p>          
           </div>
           <div class="swiper-slide box-work">
             <img src="https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg">
-            <p>Decarbonize the built environment</p>    
+            <p class="title-case">Decarbonize the built environment</p>    
           </div>
         </div>
+        <div class="swiper-works"></div>
       </div>
   </section>
   
@@ -175,99 +156,57 @@
             <h1 class="title-banner medium">We offer <span class="orange bold">several service </span>for you</h1>
             <p class="text-services">Creative minded people with a lot of joyful in visual art that will help you turning the idea into useful and beautiful products. We're based in Canada and Germany. Visual art is our field of expertise, we help people to create good engagement through design and process. We believe in teamworks and tenacity.</p>
             <p class="text-banner-mobile">Creative minded people with a lot of joyful in visual art that will help you turning the idea into useful and beautiful products. We're based in Canada and Germany. Visual art is our field of expertise, we help people to create good engagement through design and process. We believe in teamworks and tenacity.</p>
+            <a href="http://">
+              <div class="button-about">
+                More about us
+              </div>
+            </a>
           </div>
         </div>
       </div>
   </section>
-<!-- <script>
-  const servicesSection = document.getElementById('services');
-  const ourServicesImg = document.querySelector('.our-services-img');
 
-  let isStopped = false;
-  let isScrollingDown = false;
-
-  window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    const servicesSectionTop = servicesSection.getBoundingClientRect().top;
-
-    // Jika bagian layanan berada di dalam viewport dan belum berhenti
-    if (servicesSectionTop <= 0 && !isStopped) {
-      window.scrollTo(0, servicesSection.offsetTop);
-      isStopped = true;
-    }
-
-    // Jika layar sudah berhenti dan di-scroll
-    if (isStopped && scrollY > servicesSection.offsetTop) {
-      let scaleValue = 1 + (scrollY - servicesSection.offsetTop) * 0.001; /* Atur kecepatan pertumbuhan gambar saat di-scroll */
-
-      // Memastikan bahwa skala tidak melebihi 1.5
-      scaleValue = Math.min(scaleValue, 1.5);
-
-      ourServicesImg.style.transform = `scale(${scaleValue})`;
-
-      // Jika skala mencapai 1.5, izinkan scroll kembali
-      if (scaleValue >= 1.5) {
-        isScrollingDown = true;
-      }
-    }
-  });
-
-</script> -->
-  <div class="containers">
+  <div class="location-container">
     <div class="small-container">
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="box-office-location active">
+            <div class="box-office-location active" id="office-1">
               <img src="https://picsum.photos/600/900?image=10" alt="dummy-image">
-              <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
             </div>
           </div>
 
           <div class="swiper-slide">
-            <div class="box-office-location">
+            <div class="box-office-location" id="office-2">
                 <img src="https://picsum.photos/600/900?image=11" alt="dummy-image">
-              <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
             </div>
             
           </div>
 
           <div class="swiper-slide">
-            <div class ="box-office-location">
+            <div class ="box-office-location" id="office-3">
               <img src="https://picsum.photos/600/900?image=12" alt="dummy-image">
-              <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
             </div>            
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="swiper-container-mobile">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="box-office-location-mobile active">
-          <img src="https://picsum.photos/600/900?image=10" alt="dummy-image">
+      <div class="description">
+        <div class="box-office active" id ="description-1">
+          <p class="title-location">Shanghai <span>/  China</span></p>
           <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
         </div>
-      </div>
-
-      <div class="swiper-slide">
-        <div class="box-office-location-mobile">
-            <img src="https://picsum.photos/600/900?image=11" alt="dummy-image">
+        <div class="box-office" id ="description-2">
+          <p class="title-location">Lisbon <span>/  Portugal</span></p>
           <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
         </div>
-
-      </div>
-
-      <div class="swiper-slide">
-        <div class ="box-office-location-mobile">
-          <img src="https://picsum.photos/600/900?image=12" alt="dummy-image">
+        <div class="box-office" id ="description-3">
+          <p class="title-location">Denpasar <span>/  Bali</span></p>
           <p class="location-text">Portugal, a country steeped in history and brimming with coastal charm, is a captivating blend of ancient traditions and modern vibrancy.</p>
         </div>
-
       </div>
     </div>
   </div>
+
   <section class="cta">
     <div class="background-footer">     
         <div class="containers">
@@ -305,12 +244,12 @@
           <div class="f-r-box-1">
              <p class="country-title italic">PT.</p>
             <p class="footer-text">(86)21-6053 4102<br>
-            contact.ch@danchie.com</p>
+            contact.pt@danchie.com</p>
           </div>
           <div class="f-r-box-1">
              <p class="country-title italic">ID.</p>
             <p class="footer-text">(86)21-6053 4102<br>
-            contact.ch@danchie.com</p>
+            contact.id@danchie.com</p>
           </div>
       </footer>
          <hr class="line-footer">
