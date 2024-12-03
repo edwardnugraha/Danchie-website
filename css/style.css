@@ -9,6 +9,8 @@ body {
   font-family: "Inter", sans-serif !important;
   font-size: clamp(11px, 1.1vw, 22px);
 }
+.button-about img,
+.button-work img,
 .our-works-mobile,
 .dice-mobile,
 .ourteam-mobile,
@@ -784,5 +786,6 @@ button {
     position: absolute;
     top: 25%;
     left: 40%;
+    display: block;
   }
 }
