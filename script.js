@@ -3,9 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var page = document.getElementById("page");
   var openMenuButton = document.getElementById("openmenu");
   var lastScrollTop = 0;
+  var isScrolling;
 
   window.addEventListener("scroll", function () {
     var st = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Clear timeout throughout scroll
+    window.clearTimeout(isScrolling);
 
     if (st > lastScrollTop) {
       // Scrolling down
@@ -15,11 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       // Scrolling up
+      page.classList.remove("menuopen");
       if (window.scrollY < 100) {
         header.classList.remove("sticky");
+      } else {
+        header.classList.add("sticky");
       }
     }
     lastScrollTop = st <= 0 ? 0 : st;
+
+    // Set timeout to run after scrolling ends
+    isScrolling = setTimeout(function () {
+      // Run after scrolling ends
+      if (window.scrollY >= 100) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }, 66);
   });
 
   openMenuButton.addEventListener("click", function () {
@@ -229,7 +246,7 @@ var swiper2 = new Swiper(".swiper-workflow", {
   slidesPerView: 1.7,
   centeredSlides: true,
   loop: true,
-  spaceBetween: 90,
+  spaceBetween: 50,
 });
 
 swiper2.on("slideChange", function () {
@@ -290,6 +307,7 @@ var swiper6 = new Swiper(".swiper-work", {
   spaceBetween: 30,
   loop: true,
   centeredSlides: true,
+  initialSlide: 2,
   pagination: {
     el: ".swiper-works",
     clickable: true,
@@ -303,44 +321,63 @@ var swiper6 = new Swiper(".swiper-work", {
       centeredSlides: true,
     },
   },
+  on: {
+    init: function () {
+      setTimeout(function () {
+        updateActiveSlide();
+      }, 100);
+    },
+  },
 });
 
 // Menambahkan event listener untuk slideChange
 swiper6.on("slideChange", function () {
-  updateActiveSlide();
+  setTimeout(function () {
+    updateActiveSlide();
+  }, 100);
 });
 
 // Menambahkan event listener untuk klik pada box-work
 document.querySelectorAll(".box-work").forEach(function (box) {
   box.addEventListener("click", function (e) {
-    e.preventDefault(); // Mencegah default behavior
+    // Hanya jalankan jika lebar window > 640px
+    if (window.innerWidth > 640) {
+      e.preventDefault();
 
-    // Hapus kelas active dari semua box
-    document.querySelectorAll(".box-work").forEach(function (el) {
-      el.classList.remove("active");
-    });
+      // Hapus kelas active dari semua box
+      document.querySelectorAll(".box-work").forEach(function (el) {
+        el.classList.remove("active");
+      });
 
-    // Tambah kelas active ke box yang diklik
-    this.classList.add("active");
+      // Tambah kelas active ke box yang diklik
+      this.classList.add("active");
+    }
   });
 });
 
 // Fungsi untuk mengupdate status active
 function updateActiveSlide() {
-  var realIndex = swiper6.realIndex;
-  var boxSlideElements = document.querySelectorAll(".box-work");
+  if (window.innerWidth <= 640) {
+    var realIndex = swiper6.realIndex;
+    var boxSlideElements = document.querySelectorAll(".box-work");
 
-  boxSlideElements.forEach(function (element, index) {
-    if (index === realIndex) {
-      element.classList.add("active");
-    } else {
+    boxSlideElements.forEach(function (element, index) {
       element.classList.remove("active");
+    });
+
+    var activeSlide = document.querySelector(".swiper-slide-active .box-work");
+    if (activeSlide) {
+      activeSlide.classList.add("active");
     }
-  });
+  }
 }
 
-// Panggil updateActiveSlide saat inisialisasi
-updateActiveSlide();
+// Tambahkan event listener untuk resize window
+window.addEventListener("resize", function () {
+  if (window.innerWidth <= 640) {
+    updateActiveSlide();
+  }
+});
 
 $(".custom-carousel").owlCarousel({
   autoWidth: true,

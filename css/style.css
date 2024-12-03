@@ -92,7 +92,7 @@ body {
 .title-section {
   margin-bottom: 5%;
   display: flex;
-  width: 60%;
+  width: 70%;
   gap: 3%;
 }
 .title-contact {
@@ -105,9 +105,6 @@ body {
 .our-works {
   display: flex;
   justify-content: space-between;
-}
-.work-bottom {
-  margin-top: 51%;
 }
 .our-works-2 {
   display: flex;
@@ -308,6 +305,10 @@ body {
   font-size: clamp(11px, 1.1vw, 22px);
   font-weight: 500;
 }
+
+img {
+  width: 100%;
+}
 @media screen and (min-width: 360px) and (max-width: 640px) {
   .box-office-location.active img {
     transform: scale(1);
@@ -327,10 +328,7 @@ body {
     line-height: 1.75;
     display: block;
   }
-  .our-works {
-    flex-direction: column-reverse;
-    gap: 30px;
-  }
+
   .title-banner {
     font-size: clamp(32px, 8.8vw, 56px);
   }
@@ -358,6 +356,7 @@ body {
   }
 
   .swiper-work {
+    margin-top: 0;
     overflow: hidden;
     display: block;
   }
@@ -381,12 +380,15 @@ body {
   .cta-contact,
   .cta-section-contact {
     flex-direction: column-reverse;
+    gap: 30px;
   }
   .services-banner,
   .contact-form,
   .aboutus {
     flex-direction: column;
+    gap: 30px;
   }
+  .title-contact,
   .contact-box,
   .small-container,
   .box-team,
@@ -403,7 +405,7 @@ body {
     width: 100%;
   }
   .box-services {
-    width: 89%;
+    width: 100%;
   }
 
   .box-about-2 {
@@ -413,9 +415,7 @@ body {
   .b-a-content {
     height: 46vw;
   }
-  .box-services {
-    margin-left: 8%;
-  }
+
   .dice-mobile {
     margin-left: 0;
     margin-top: 11%;
@@ -492,7 +492,8 @@ body {
     width: 100%;
   }
   .box-herobanner-2 img {
-    width: 130%;
+    width: 100%;
+    margin-left: 0;
   }
   .box-image-location-mobile {
     margin: 0 auto;
@@ -511,8 +512,7 @@ body {
     background-color: #f3f0f2;
     border-radius: 227px 227px 0 0;
     transition: 0.5s ease-in-out;
-    width: 131%;
-    margin-left: -16%;
+    height: 82vw;
   }
 
   .box-approach-content-mobile img {
@@ -755,4 +755,34 @@ button {
 .owl-theme .owl-dots {
   margin-left: 5%;
   text-align: left;
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+  .swiper-pagination-bullet {
+    width: 7.5px !important;
+    height: 5px !important;
+    display: inline-block !important;
+    border-radius: 210px !important;
+    background: #f3f0f2 !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination-bullet-active {
+    width: 25px !important;
+    height: 5px !important;
+    background: #e73700 !important;
+  }
+  .button-about,
+  .button-work {
+    color: transparent;
+    position: relative;
+    font-size: unset;
+    padding: unset;
+  }
+  .button-about img,
+  .button-work img {
+    width: 25%;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+  }
 }
